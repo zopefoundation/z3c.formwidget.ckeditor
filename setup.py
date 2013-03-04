@@ -27,7 +27,7 @@ TESTS_REQUIRE = [
 
 setup (
     name='z3c.formwidget.ckeditor',
-    version='2.0.0a1',
+    version='2.0.0a2.dev0',
     author = "Stephan Richter and the Zope Community",
     author_email = "zope-dev@zope.org",
     description = "A CKEditor widget for text fields using z3c.form",
