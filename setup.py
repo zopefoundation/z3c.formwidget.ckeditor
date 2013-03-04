@@ -99,6 +99,6 @@ setup (
         'zope.viewlet',
         ],
     tests_require=TESTS_REQUIRE,
-    test_suite='z3c.menu.ready2go.tests.test_suite',
+    test_suite='z3c.formwidget.ckeditor.tests.test_suite',
     zip_safe = False,
     )
