@@ -39,4 +39,12 @@
       layer=".interfaces.IDemoBrowserLayer"
       />
 
+  <browser:view
+      name="favicon.ico"
+      for="*"
+      class=".demo.FavIcon"
+      permission="zope.Public"
+      layer=".interfaces.IDemoBrowserLayer"
+      />
+
 </configure>

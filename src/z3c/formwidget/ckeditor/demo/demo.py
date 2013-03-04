@@ -11,16 +11,24 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-"""Demo Itnerfaces
-
-$Id$
+"""Demo Interfaces
 """
+import os
 import zope.interface
 import zope.schema
 from zope.schema.fieldproperty import FieldProperty
 from z3c.form import field
 from z3c.formui import form
 from z3c.formwidget.ckeditor import richtext, ckeditor
+
+FAVICON_PATH = os.path.join(os.path.dirname(__file__), 'favicon.ico')
+
+class FavIcon(object):
+
+    def __call__(self):
+        self.request.response.setHeader('Content-Type', 'image/x-icon')
+        with open(FAVICON_PATH, 'rb') as img:
+            return img.read()
 
 class IArticle(zope.interface.Interface):
 
@@ -37,8 +45,8 @@ class IArticle(zope.interface.Interface):
         )
 
 
+@zope.interface.implementer(IArticle)
 class Article(object):
-    zope.interface.implements(IArticle)
 
     title = FieldProperty(IArticle['title'])
     body = FieldProperty(IArticle['body'])

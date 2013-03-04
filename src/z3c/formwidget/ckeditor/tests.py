@@ -12,11 +12,7 @@
 #
 ##############################################################################
 """CKEditor widget test setup
-
-$Id$
 """
-__docformat__ = "reStructuredText"
-
 import doctest
 import os.path
 import unittest

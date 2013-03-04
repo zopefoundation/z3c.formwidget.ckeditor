@@ -12,8 +12,6 @@
 #
 ##############################################################################
 """Demo Itnerfaces
-
-$Id$
 """
 from zope.publisher.interfaces.browser import IBrowserRequest
 from zope.viewlet.interfaces import IViewletManager

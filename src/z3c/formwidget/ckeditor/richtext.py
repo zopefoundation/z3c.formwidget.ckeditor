@@ -12,13 +12,11 @@
 #
 ##############################################################################
 """RichText Field implementation
-
-$Id$
 """
-__docformat__ = "reStructuredText"
 import zope.interface
 import zope.schema
 from z3c.formwidget.ckeditor import interfaces
 
+@zope.interface.implementer(interfaces.IRichText)
 class RichText(zope.schema.Text):
-    zope.interface.implements(interfaces.IRichText)
+    pass

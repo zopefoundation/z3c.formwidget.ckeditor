@@ -55,7 +55,7 @@ Let's add some meaningful generic data:
 If we render the widget we get the HTML:
 
   >>> widget.update()
-  >>> print widget.render()
+  >>> print(widget.render())
   <textarea id="id" name="name" class="CKEditorWidget"></textarea>
   <script type="text/javascript">CKEDITOR.replace('name', {});</script>
 
@@ -68,18 +68,18 @@ variable name. The variable must be declared beforehand.
 
   >>> widget.config = 'myCKEditorConfig'
   >>> widget.update()
-  >>> print widget.render()
+  >>> print(widget.render())
   <textarea id="id" name="name" class="CKEditorWidget"></textarea>
   <script type="text/javascript">CKEDITOR.replace('name', myCKEditorConfig);</script>
 
 Alternatively, the config attribute can be a dictionary of options, which are
 encoded to Javascript upon render time:
 
-  >>> widget.config = {'toolbar': 'Basic', 'uiColor': '#9AB8F3'}
+  >>> widget.config = '{"toolbar": "Basic", "uiColor": "#9AB8F3"}'
   >>> widget.update()
-  >>> print widget.render()
+  >>> print(widget.render())
   <textarea id="id" name="name" class="CKEditorWidget"></textarea>
-  <script type="text/javascript">CKEDITOR.replace('name', {"uiColor": "#9AB8F3", "toolbar": "Basic"});</script>
+  <script type="text/javascript">CKEDITOR.replace('name', {"toolbar": "Basic", "uiColor": "#9AB8F3"});</script>
 
 All other values cause a `ValueError` to be raised.
 
@@ -99,7 +99,7 @@ The field widget for the rich text field is available too of course:
   <CKEditorWidget 'text'>
 
   >>> widget.update()
-  >>> print widget.render()
+  >>> print(widget.render())
   <textarea id="text" name="text"
             class="CKEditorWidget required richtext-field"></textarea>
   <script type="text/javascript">CKEDITOR.replace('text', {});</script>
@@ -108,12 +108,12 @@ You can also create CKEditor Field Widget factories on the fly using a given
 configuration:
 
   >>> MinimalCKEditorWidget = ckeditor.CKEditorFieldWidgetFactory(
-  ...     {'toolbar': 'Basic', 'uiColor': '#9AB8F3'})
+  ...     '{"toolbar": "Basic", "uiColor": "#9AB8F3"}')
 
   >>> widget = MinimalCKEditorWidget(text, request)
   >>> widget.update()
-  >>> print widget.render()
+  >>> print(widget.render())
   <textarea id="text" name="text"
             class="CKEditorWidget required richtext-field"></textarea>
   <script type="text/javascript">CKEDITOR.replace('text',
-       {"uiColor": "#9AB8F3", "toolbar": "Basic"});</script>
+       {"toolbar": "Basic", "uiColor": "#9AB8F3"});</script>

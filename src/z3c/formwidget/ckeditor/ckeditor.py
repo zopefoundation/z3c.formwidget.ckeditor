@@ -12,11 +12,9 @@
 #
 ##############################################################################
 """CKEditor Widget implementation
-
-$Id$
 """
-__docformat__ = "reStructuredText"
 import simplejson as json
+import six
 import zope.component
 import zope.interface
 import zope.schema.interfaces
@@ -26,8 +24,8 @@ from z3c.form.interfaces import IFieldWidget, IFormLayer
 from z3c.form.widget import FieldWidget
 from z3c.formwidget.ckeditor import interfaces
 
+@zope.interface.implementer_only(interfaces.ICKEditorWidget)
 class CKEditorWidget(textarea.TextAreaWidget):
-    zope.interface.implementsOnly(interfaces.ICKEditorWidget)
 
     klass = u'CKEditorWidget'
     config = None
@@ -36,7 +34,7 @@ class CKEditorWidget(textarea.TextAreaWidget):
         super(CKEditorWidget, self).update()
         if self.config == None:
             self.configString = '{}'
-        elif isinstance(self.config, (str, unicode)):
+        elif isinstance(self.config, six.string_types):
             self.configString = str(self.config)
         elif isinstance(self.config, dict):
             self.configString = json.dumps(self.config)

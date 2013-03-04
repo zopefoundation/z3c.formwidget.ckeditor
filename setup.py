@@ -19,9 +19,15 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
+TESTS_REQUIRE = [
+    'zope.testing',
+    'z3c.coverage',
+    'z3c.form [test]',
+    ]
+
 setup (
     name='z3c.formwidget.ckeditor',
-    version='1.2.0dev',
+    version='2.0.0a1.dev',
     author = "Stephan Richter and the Zope Community",
     author_email = "zope-dev@zope.org",
     description = "A CKEditor widget for text fields using z3c.form",
@@ -38,11 +44,17 @@ setup (
     license = "ZPL 2.1",
     keywords = "zope3 form widget ckeditor text",
     classifiers = [
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Zope Public License',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: Implementation :: CPython',
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Topic :: Internet :: WWW/HTTP',
@@ -55,7 +67,8 @@ setup (
     extras_require = dict(
         demo = [
             'ZConfig',
-            'ZODB3',
+            'transaction',
+            'waitress',
             'z3c.form',
             'z3c.formui',
             'z3c.layer.pagelet',
@@ -63,30 +76,29 @@ setup (
             'z3c.pagelet',
             'z3c.schema',
             'z3c.template',
-            'z3c.viewlet',
-            'zc.configuration',
-            'zdaemon',
             'zope.app.appsetup',
             'zope.app.http',
-            'zope.app.security',
-            'zope.app.twisted',
             'zope.app.wsgi',
             'zope.error',
+            'zope.paste',
+            'zope.principalregistry',
             'zope.publisher',
             'zope.securitypolicy',
             'zope.traversing',
             ],
-        test = [
-            'zope.testing',
-            'z3c.coverage',
-            'z3c.form [test]',
-            ],
+        test = TESTS_REQUIRE,
         ),
     install_requires = [
         'setuptools',
         'simplejson',
+        'six',
         'z3c.form',
+        'zope.component',
+        'zope.interface',
+        'zope.schema',
         'zope.viewlet',
         ],
+    tests_require=TESTS_REQUIRE,
+    test_suite='z3c.menu.ready2go.tests.test_suite',
     zip_safe = False,
     )

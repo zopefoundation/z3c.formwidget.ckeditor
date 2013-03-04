@@ -12,10 +12,7 @@
 #
 ##############################################################################
 """CKEditor Widget interfaces
-
-$Id$
 """
-__docformat__ = "reStructuredText"
 import zope.schema
 import zope.schema.interfaces
 from zope.viewlet.interfaces import IViewletManager

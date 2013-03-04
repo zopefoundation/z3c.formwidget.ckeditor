@@ -1,0 +1,13 @@
+*.egg
+*.pyc
+__pycache__
+src/*.egg-info
+benchmark/*.egg-info
+Data.fs*
+
+.installed.cfg
+.tox
+bin
+develop-eggs
+docs
+parts
