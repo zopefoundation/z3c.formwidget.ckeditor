@@ -19,11 +19,10 @@ import unittest
 import zope.component
 import zope.interface
 import zope.schema
-from zope.pagetemplate.interfaces import IPageTemplate
-from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 from z3c.form import widget, testing
 from z3c.formwidget.ckeditor import ckeditor, interfaces
+
 
 def setUp(test):
     # Setup z3c.form basic setup
@@ -36,10 +35,12 @@ def setUp(test):
     zope.component.provideAdapter(factory, name='input')
     zope.component.provideAdapter(ckeditor.CKEditorFieldWidget)
 
+
 def test_suite():
     return unittest.TestSuite((
-        doctest.DocFileSuite('README.txt',
-                     setUp=setUp, tearDown=testing.tearDown,
-                     optionflags=doctest.NORMALIZE_WHITESPACE|doctest.ELLIPSIS,
-                     ),
-        ))
+        doctest.DocFileSuite(
+            'README.txt',
+            setUp=setUp, tearDown=testing.tearDown,
+            optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS,
+        ),
+    ))

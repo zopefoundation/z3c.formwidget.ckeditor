@@ -17,6 +17,7 @@ import zope.interface
 import zope.schema
 from z3c.formwidget.ckeditor import interfaces
 
+
 @zope.interface.implementer(interfaces.IRichText)
 class RichText(zope.schema.Text):
     pass
