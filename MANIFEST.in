@@ -1,9 +1,28 @@
+# Generated from:
+# https://github.com/zopefoundation/meta/tree/master/config/pure-python
 include *.rst
 include *.txt
-include *.py
 include buildout.cfg
 include tox.ini
 
-recursive-include src *
-
-global-exclude *.pyc
+recursive-include src *.pt
+recursive-include src *.py
+recursive-include src *.rst
+recursive-include src *.txt
+recursive-include src *.zcml
+recursive-include src *.asp
+recursive-include src *.bat
+recursive-include src *.css
+recursive-include src *.fla
+recursive-include src *.gif
+recursive-include src *.htaccess
+recursive-include src *.html
+recursive-include src *.ico
+recursive-include src *.ini
+recursive-include src *.js
+recursive-include src *.pack
+recursive-include src *.php
+recursive-include src *.png
+recursive-include src *.sh
+recursive-include src *.swf
+recursive-include src *.xml
