@@ -18,8 +18,10 @@ import zope.schema.interfaces
 from zope.viewlet.interfaces import IViewletManager
 from z3c.form.interfaces import ITextAreaWidget
 
+
 class IJavaScript(IViewletManager):
     """JavaScript viewlet manager."""
+
 
 class IRichText(zope.schema.interfaces.IText):
     """A text field that contains rich-text markup in HTML."""

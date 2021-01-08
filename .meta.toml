@@ -1,0 +1,35 @@
+# Generated from:
+# https://github.com/zopefoundation/meta/tree/master/config/pure-python
+[meta]
+template = "pure-python"
+commit-id = "13d63a597af449ff5a6a130d86943f6db556cbdc"
+
+[python]
+with-appveyor = false
+with-pypy = false
+with-legacy-python = true
+with-docs = false
+with-sphinx-doctests = false
+
+[coverage]
+fail-under = 56
+
+[manifest]
+additional-rules = [
+    "recursive-include src *.asp",
+    "recursive-include src *.bat",
+    "recursive-include src *.css",
+    "recursive-include src *.fla",
+    "recursive-include src *.gif",
+    "recursive-include src *.htaccess",
+    "recursive-include src *.html",
+    "recursive-include src *.ico",
+    "recursive-include src *.ini",
+    "recursive-include src *.js",
+    "recursive-include src *.pack",
+    "recursive-include src *.php",
+    "recursive-include src *.png",
+    "recursive-include src *.sh",
+    "recursive-include src *.swf",
+    "recursive-include src *.xml",
+    ]

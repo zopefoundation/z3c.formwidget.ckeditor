@@ -16,21 +16,24 @@
 import os
 from setuptools import setup, find_packages
 
+
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
+
 TESTS_REQUIRE = [
+    'lxml',
     'zope.testing',
     'z3c.coverage',
     'z3c.form [test]',
-    ]
+]
 
-setup (
+setup(
     name='z3c.formwidget.ckeditor',
-    version='2.0.0a2.dev0',
-    author = "Stephan Richter and the Zope Community",
-    author_email = "zope-dev@zope.org",
-    description = "A CKEditor widget for text fields using z3c.form",
+    version='2.0.0.dev0',
+    author="Stephan Richter and the Zope Community",
+    author_email="zope-dev@zope.org",
+    description="A CKEditor widget for text fields using z3c.form",
     long_description=(
         read('README.txt')
         + '\n\n' +
@@ -40,32 +43,35 @@ setup (
         read('src', 'z3c', 'formwidget', 'ckeditor', 'README.txt')
         + '\n\n' +
         read('CHANGES.txt')
-        ),
-    license = "ZPL 2.1",
-    keywords = "zope3 form widget ckeditor text",
-    classifiers = [
+    ),
+    license="ZPL 2.1",
+    keywords="zope3 form widget ckeditor text",
+    classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Zope Public License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: Implementation :: CPython',
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Topic :: Internet :: WWW/HTTP',
         'Framework :: Zope :: 3'],
-    url = 'http://pypi.python.org/pypi/z3c.formwidget.ckeditor',
-    packages = find_packages('src'),
-    include_package_data = True,
-    package_dir = {'':'src'},
-    namespace_packages = ['z3c', 'z3c.formwidget'],
-    extras_require = dict(
-        demo = [
+    url='https://github.com/zopefoundation//z3c.formwidget.ckeditor',
+    packages=find_packages('src'),
+    include_package_data=True,
+    package_dir={'': 'src'},
+    namespace_packages=['z3c', 'z3c.formwidget'],
+    extras_require=dict(
+        demo=[
             'ZConfig',
             'transaction',
             'waitress',
@@ -85,10 +91,10 @@ setup (
             'zope.publisher',
             'zope.securitypolicy',
             'zope.traversing',
-            ],
-        test = TESTS_REQUIRE,
-        ),
-    install_requires = [
+        ],
+        test=TESTS_REQUIRE,
+    ),
+    install_requires=[
         'setuptools',
         'simplejson',
         'six',
@@ -97,8 +103,8 @@ setup (
         'zope.interface',
         'zope.schema',
         'zope.viewlet',
-        ],
+    ],
     tests_require=TESTS_REQUIRE,
     test_suite='z3c.formwidget.ckeditor.tests.test_suite',
-    zip_safe = False,
-    )
+    zip_safe=False,
+)

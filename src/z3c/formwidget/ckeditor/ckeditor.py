@@ -24,6 +24,7 @@ from z3c.form.interfaces import IFieldWidget, IFormLayer
 from z3c.form.widget import FieldWidget
 from z3c.formwidget.ckeditor import interfaces
 
+
 @zope.interface.implementer_only(interfaces.ICKEditorWidget)
 class CKEditorWidget(textarea.TextAreaWidget):
 
@@ -32,7 +33,7 @@ class CKEditorWidget(textarea.TextAreaWidget):
 
     def update(self):
         super(CKEditorWidget, self).update()
-        if self.config == None:
+        if self.config is None:
             self.configString = '{}'
         elif isinstance(self.config, six.string_types):
             self.configString = str(self.config)
@@ -60,5 +61,6 @@ def CKEditorFieldWidgetFactory(config=None):
         return FieldWidget(field, widget)
 
     return CKEditorFieldWidget
+
 
 CKEditorJSViewlet = JavaScriptViewlet('ckeditor/ckeditor.js')

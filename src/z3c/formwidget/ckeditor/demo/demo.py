@@ -23,6 +23,7 @@ from z3c.formwidget.ckeditor import richtext, ckeditor
 
 FAVICON_PATH = os.path.join(os.path.dirname(__file__), 'favicon.ico')
 
+
 class FavIcon(object):
 
     def __call__(self):
@@ -30,19 +31,20 @@ class FavIcon(object):
         with open(FAVICON_PATH, 'rb') as img:
             return img.read()
 
+
 class IArticle(zope.interface.Interface):
 
     title = zope.schema.TextLine(
         title=u'Title'
-        )
+    )
 
     teaser = richtext.RichText(
         title=u'Teaser'
-        )
+    )
 
     body = richtext.RichText(
         title=u'Body'
-        )
+    )
 
 
 @zope.interface.implementer(IArticle)

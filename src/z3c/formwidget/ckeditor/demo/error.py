@@ -20,6 +20,7 @@ from zope.app.appsetup.bootstrap import ensureUtility, getInformationFromEvent
 from zope.error.error import RootErrorReportingUtility
 from zope.error.interfaces import IErrorReportingUtility
 
+
 def errorSubscriber(event):
     """Subscriber to the IDataBaseOpenedEvent
 
@@ -34,6 +35,7 @@ def errorSubscriber(event):
 
     transaction.commit()
     connection.close()
+
 
 globalErrorReportingUtility = RootErrorReportingUtility()
 globalErrorReportingUtility.setProperties(20, True, ())
