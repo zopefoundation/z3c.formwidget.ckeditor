@@ -23,9 +23,10 @@ def read(*rnames):
 
 TESTS_REQUIRE = [
     'lxml',
-    'zope.testing',
     'z3c.coverage',
     'z3c.form [test]',
+    'zope.testing',
+    'zope.testrunner',
 ]
 
 setup(
