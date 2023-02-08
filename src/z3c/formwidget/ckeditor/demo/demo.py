@@ -28,7 +28,7 @@ from z3c.formwidget.ckeditor import richtext
 FAVICON_PATH = os.path.join(os.path.dirname(__file__), 'favicon.ico')
 
 
-class FavIcon(object):
+class FavIcon:
 
     def __call__(self):
         self.request.response.setHeader('Content-Type', 'image/x-icon')
@@ -39,28 +39,28 @@ class FavIcon(object):
 class IArticle(zope.interface.Interface):
 
     title = zope.schema.TextLine(
-        title=u'Title'
+        title='Title'
     )
 
     teaser = richtext.RichText(
-        title=u'Teaser'
+        title='Teaser'
     )
 
     body = richtext.RichText(
-        title=u'Body'
+        title='Body'
     )
 
 
 @zope.interface.implementer(IArticle)
-class Article(object):
+class Article:
 
     title = FieldProperty(IArticle['title'])
     body = FieldProperty(IArticle['body'])
 
 
 ARTICLE = Article()
-ARTICLE.title = u'CKEditor Demo'
-ARTICLE.body = u'This is <b>the</b> CKEditor demo.'
+ARTICLE.title = 'CKEditor Demo'
+ARTICLE.body = 'This is <b>the</b> CKEditor demo.'
 
 
 MinimalCKEditorWidget = ckeditor.CKEditorFieldWidgetFactory(
@@ -69,7 +69,7 @@ MinimalCKEditorWidget = ckeditor.CKEditorFieldWidgetFactory(
 
 class DemoForm(form.EditForm):
 
-    label = u'Edit CKEditor Article'
+    label = 'Edit CKEditor Article'
     fields = field.Fields(IArticle)
     fields['teaser'].widgetFactory = MinimalCKEditorWidget
 

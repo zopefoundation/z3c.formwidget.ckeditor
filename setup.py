@@ -35,7 +35,7 @@ setup(
     name='z3c.formwidget.ckeditor',
     version='3.0.dev0',
     author="Stephan Richter and the Zope Community",
-    author_email="zope-dev@zope.org",
+    author_email="zope-dev@zope.dev",
     description="A CKEditor widget for text fields using z3c.form",
     long_description=(
         read('README.txt')
@@ -72,6 +72,7 @@ setup(
     include_package_data=True,
     package_dir={'': 'src'},
     namespace_packages=['z3c', 'z3c.formwidget'],
+    python_requires='>=3.7',
     extras_require=dict(
         demo=[
             'ZConfig',
@@ -99,7 +100,6 @@ setup(
     install_requires=[
         'setuptools',
         'simplejson',
-        'six',
         'z3c.form',
         'zope.component',
         'zope.interface',

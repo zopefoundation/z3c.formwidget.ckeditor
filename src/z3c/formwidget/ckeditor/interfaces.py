@@ -31,11 +31,11 @@ class ICKEditorWidget(ITextAreaWidget):
     """CKEditor widget."""
 
     config = zope.schema.Field(
-        title=u'Configuration',
+        title='Configuration',
         description=(
-            u'CKEditor Configuration. `None` refers to no configuration, a '
-            u'string represents a variable name to a config object, and a '
-            u'dictionary an actual configuration object that is encoded using '
-            u'JSON. All other object types will cause a `ValueError`.'),
+            'CKEditor Configuration. `None` refers to no configuration, a '
+            'string represents a variable name to a config object, and a '
+            'dictionary an actual configuration object that is encoded using '
+            'JSON. All other object types will cause a `ValueError`.'),
         default=None,
         required=False)

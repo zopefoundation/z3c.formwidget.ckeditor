@@ -13,8 +13,6 @@
 ##############################################################################
 """CKEditor Widget implementation
 """
-import six
-
 import simplejson as json
 import zope.component
 import zope.interface
@@ -31,14 +29,14 @@ from z3c.formwidget.ckeditor import interfaces
 @zope.interface.implementer_only(interfaces.ICKEditorWidget)
 class CKEditorWidget(textarea.TextAreaWidget):
 
-    klass = u'CKEditorWidget'
+    klass = 'CKEditorWidget'
     config = None
 
     def update(self):
-        super(CKEditorWidget, self).update()
+        super().update()
         if self.config is None:
             self.configString = '{}'
-        elif isinstance(self.config, six.string_types):
+        elif isinstance(self.config, str):
             self.configString = str(self.config)
         elif isinstance(self.config, dict):
             self.configString = json.dumps(self.config)
