@@ -15,6 +15,7 @@
 """
 import zope.interface
 import zope.schema
+
 from z3c.formwidget.ckeditor import interfaces
 
 

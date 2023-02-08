@@ -14,12 +14,16 @@
 """Demo Interfaces
 """
 import os
+
 import zope.interface
 import zope.schema
-from zope.schema.fieldproperty import FieldProperty
 from z3c.form import field
 from z3c.formui import form
-from z3c.formwidget.ckeditor import richtext, ckeditor
+from zope.schema.fieldproperty import FieldProperty
+
+from z3c.formwidget.ckeditor import ckeditor
+from z3c.formwidget.ckeditor import richtext
+
 
 FAVICON_PATH = os.path.join(os.path.dirname(__file__), 'favicon.ico')
 

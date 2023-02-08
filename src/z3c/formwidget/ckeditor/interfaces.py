@@ -15,8 +15,8 @@
 """
 import zope.schema
 import zope.schema.interfaces
-from zope.viewlet.interfaces import IViewletManager
 from z3c.form.interfaces import ITextAreaWidget
+from zope.viewlet.interfaces import IViewletManager
 
 
 class IJavaScript(IViewletManager):

@@ -14,9 +14,8 @@
 """Error Reporting.
 """
 import transaction
-
-from zope.app.appsetup.bootstrap import ensureUtility, getInformationFromEvent
-
+from zope.app.appsetup.bootstrap import ensureUtility
+from zope.app.appsetup.bootstrap import getInformationFromEvent
 from zope.error.error import RootErrorReportingUtility
 from zope.error.interfaces import IErrorReportingUtility
 

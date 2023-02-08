@@ -13,15 +13,18 @@
 ##############################################################################
 """CKEditor Widget implementation
 """
-import simplejson as json
 import six
+
+import simplejson as json
 import zope.component
 import zope.interface
 import zope.schema.interfaces
-from zope.viewlet.viewlet import JavaScriptViewlet
 from z3c.form.browser import textarea
-from z3c.form.interfaces import IFieldWidget, IFormLayer
+from z3c.form.interfaces import IFieldWidget
+from z3c.form.interfaces import IFormLayer
 from z3c.form.widget import FieldWidget
+from zope.viewlet.viewlet import JavaScriptViewlet
+
 from z3c.formwidget.ckeditor import interfaces
 
 

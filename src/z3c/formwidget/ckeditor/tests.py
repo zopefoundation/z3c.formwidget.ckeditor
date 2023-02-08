@@ -16,12 +16,15 @@
 import doctest
 import os.path
 import unittest
+
 import zope.component
 import zope.interface
 import zope.schema
+from z3c.form import testing
+from z3c.form import widget
 
-from z3c.form import widget, testing
-from z3c.formwidget.ckeditor import ckeditor, interfaces
+from z3c.formwidget.ckeditor import ckeditor
+from z3c.formwidget.ckeditor import interfaces
 
 
 def setUp(test):
