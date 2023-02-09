@@ -13,10 +13,12 @@
 ##############################################################################
 """Demo interfaces
 """
-from zope.publisher.interfaces.browser import IBrowserRequest
 from z3c.form.interfaces import IFormLayer
+from z3c.formui.interfaces import ICSS
+from z3c.formui.interfaces import IDivFormLayer
 from z3c.layer.pagelet import IPageletBrowserLayer
-from z3c.formui.interfaces import IDivFormLayer, ICSS
+from zope.publisher.interfaces.browser import IBrowserRequest
+
 from z3c.formwidget.ckeditor.interfaces import IJavaScript
 
 

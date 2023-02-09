@@ -14,28 +14,29 @@
 """CKEditor Widget implementation
 """
 import simplejson as json
-import six
 import zope.component
 import zope.interface
 import zope.schema.interfaces
-from zope.viewlet.viewlet import JavaScriptViewlet
 from z3c.form.browser import textarea
-from z3c.form.interfaces import IFieldWidget, IFormLayer
+from z3c.form.interfaces import IFieldWidget
+from z3c.form.interfaces import IFormLayer
 from z3c.form.widget import FieldWidget
+from zope.viewlet.viewlet import JavaScriptViewlet
+
 from z3c.formwidget.ckeditor import interfaces
 
 
 @zope.interface.implementer_only(interfaces.ICKEditorWidget)
 class CKEditorWidget(textarea.TextAreaWidget):
 
-    klass = u'CKEditorWidget'
+    klass = 'CKEditorWidget'
     config = None
 
     def update(self):
-        super(CKEditorWidget, self).update()
+        super().update()
         if self.config is None:
             self.configString = '{}'
-        elif isinstance(self.config, six.string_types):
+        elif isinstance(self.config, str):
             self.configString = str(self.config)
         elif isinstance(self.config, dict):
             self.configString = json.dumps(self.config)
